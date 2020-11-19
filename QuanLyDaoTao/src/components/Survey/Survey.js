@@ -76,16 +76,7 @@ export default class Survey extends Component {
     goBackScreen = () => {
         this.props.navigation.goBack();
     }
-    handleSelect(event) {
-        let entry = event.nativeEvent
-        if (entry == null) {
-            this.setState({ ...this.state, selectedEntry: null })
-        } else {
-            this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) })
-        }
-
-        console.log(event.nativeEvent)
-    }
+    
 
     render() {
         return (
@@ -133,8 +124,6 @@ export default class Survey extends Component {
                             webColorInner={processColor("gray")}
 
                             skipWebLineCount={1}
-                            onSelect={this.handleSelect.bind(this)}
-                            onChange={(event) => console.log(event.nativeEvent)}
                         />
                     </View>
 
